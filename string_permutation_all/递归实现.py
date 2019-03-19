@@ -18,14 +18,10 @@ def CalcAllPermutation(string_list, start, end):
         print(''.join(string_list))
     else:
         for j in range(start, end):
-            print(j, start, string_list)
             swap(string_list, start, j)
-            print(j, start, string_list)
             CalcAllPermutation(string_list, start+1, end)
             # 复原原字符串序列
-            print(j, start, string_list)
             swap(string_list, start, j)
-            print(j, start, string_list)
 
 
 if __name__ == "__main__":
