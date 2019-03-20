@@ -24,4 +24,17 @@ In[1]:
 
 Action|i|lst|out  
 |:---:|:---:|:---:|:---:|
-append|0|a|a
+append|0|a|a  
+append|1|ab|ab  
+append|2|abc|abc  
+pop|2|ab|-  
+pop|1|a|-  
+append|2|ac|ac  
+pop|2|a|-  
+pop|0|-|-  
+append|1|b|b  
+append|2|bc|bc  
+pop|2|b|-  
+pop|1|-|-  
+append|2|c|c  
+pop|2|-|-
