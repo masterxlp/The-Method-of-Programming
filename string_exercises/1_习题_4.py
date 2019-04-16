@@ -14,22 +14,26 @@ def StringMatch(string, article):
     while i < len(string) and j < len(article):
 
         if string[i] is '*':
-            char = string[i+1]
+            if i + 1 < len(string):
+                char = string[i+1]
 
-            while article[j] is not char:
+                while article[j] is not char:
 
-                if article[j] not in letter:
-                    j += 1
-                    match_result = list()
-                    break
+                    if article[j] not in letter:
+                        j += 1
+                        match_result = list()
+                        break
+                    else:
+                        match_result.append(article[j])
+                        j += 1
+
+                if len(match_result) != 0:
+                    i += 1
                 else:
-                    match_result.append(article[j])
-                    j += 1
-
-            if len(match_result) != 0:
-                i += 1
+                    i = 0
             else:
-                i = 0
+                match_result.append(article[j])
+                j += 1
         elif string[i] is '?':
             if article[j] not in letter:
                 i = 0
@@ -55,3 +59,4 @@ def StringMatch(string, article):
 
 
 StringMatch('J* Smi??', 'I am John Smith, and are you Jon Smitj?')
+StringMatch('K*', 'the Kering group, which owns Gucci and Yves Saint ')
